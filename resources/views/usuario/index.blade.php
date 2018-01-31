@@ -6,6 +6,9 @@
 
 <div class="users">
 
+    {!! link_to_route('usuario.create', $title = 'Agregar Usuario', $parameters = null, $attributes = ['class'=>'btn btn-primary']); !!}
+
+
     <table class="table">
         <thead>
             <th>Foto</th>
