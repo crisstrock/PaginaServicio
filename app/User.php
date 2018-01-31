@@ -40,6 +40,19 @@ class User extends Authenticatable
         }
     }
 
+    public static function getTipoUsuario()
+    {
+        $type = DB::select( DB::raw("SHOW COLUMNS FROM users WHERE Field = 'tipo_usuario'") )[0]->Type;
+        preg_match('/^enum\((.*)\)$/', $type, $matches);
+        $enum = array();
+            foreach( explode(',', $matches[1]) as $value )
+            {
+                $v = trim( $value, "'" );
+                $enum = array_add($enum, $v, $v);
+            }
+        return $enum;
+    }
+
     public function setPathAttribute($path){
 
         if(!empty($path)){

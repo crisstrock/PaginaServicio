@@ -18,11 +18,15 @@ class MobiController extends Controller
      */
     public function index()
     {
-        $lugares = Lugar::Lugar();
-        return view('mobiliario.index',compact('lugares'));
+        $items = Item::MobiAll();
+        return view('mobiliario.vertodos',compact('items'));       
         
     }
 
+    public function buscar(){
+        $lugares = Lugar::Lugar();
+        return view('mobiliario.index',compact('lugares'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -30,8 +34,8 @@ class MobiController extends Controller
      */
     public function create()
     {
-        //$lugar = Lugar::pluck('nombre','id');
-        return view('mobiliario.create');//, compact('lugar'));
+        $clasi = Item::getClasificacion();
+        return view('mobiliario.create', compact('clasi'));
     }
 
     /**
@@ -45,8 +49,8 @@ class MobiController extends Controller
         $item = Item::create($request->all());
         
         Session::flash('message', 'Item creado correctamente');
-        return redirect('exist/create')->with(compact('properties'));
-        //return Redirect::to('/mobi');
+        //return redirect('exist/create')->with(compact('properties'));
+        return Redirect::to('/mobi');
     }
 
     

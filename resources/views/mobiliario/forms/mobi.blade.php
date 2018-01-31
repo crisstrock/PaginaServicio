@@ -1,12 +1,11 @@
 
 <div class="form-group">
-	{!!Form::label('Clasificacion','Clasificación:')!!}
-	{!!Form::text('clasificacion',null,['class'=>'form-control', 'placeholder'=>'Ingresa la clasificación'])!!}
+	{!!Form::label('Clasificación','Clasificación:')!!}
+	{!!Form::select('clasificacion', $clasi, ['class'=>'form-control'])!!}
 </div>
-
 <div class="form-group">
 	{!!Form::label('Descripcion','Descripción:')!!}
-	{!!Form::text('descripcion',null,['class'=>'form-control', 'placeholder'=>'Ingresa la descripción'])!!}
+	{!!Form::text('descripcion',null,['class'=>'form-control', 'placeholder'=>'Ingresa el modelo'])!!}
 </div>
 
 <div class="form-group">
@@ -25,4 +24,13 @@
 <div class="form-group">
 	{!!Form::label('Foto','Foto:')!!}
 	{!!Form::file('path')!!}
+</div>
+<div class="form-group">
+	{!!Form::label('Num_inventario','Numero de inventario:')!!}
+	{!!Form::text('numero_inventario',null,['class'=>'form-control', 'placeholder'=>'Ingresa el estado'])!!}
+</div>
+
+<div class="form-group">
+	{!!Form::label('Num_serie','Numero de serie:')!!}
+	{!!Form::text('numero_serie',null,['class'=>'form-control', 'placeholder'=>'Ingresa la marca'])!!}
 </div>

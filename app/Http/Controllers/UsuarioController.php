@@ -41,7 +41,8 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view('usuario.create');
+        $tipo = User::getTipoUsuario();
+        return view('usuario.create',compact('tipo'));
     }
 
     /**

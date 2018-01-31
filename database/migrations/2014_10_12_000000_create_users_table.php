@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('apellido');
             $table->string('telefono');
             $table->string('horas_cubrir');
-            $table->string('tipo_usuario');
+            $table->enum('tipo_usuario', ['Administrador', 'Encargado', 'Reporteador', 'Prestador']);
             $table->string('email')->unique();
             $table->string('password');
             $table->string('path');

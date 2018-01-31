@@ -73,14 +73,14 @@
 
                                 <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!! URL::to('/mobi/create') !!}"><i class='fa fa-plus fa-fw'></i> Agregar Item</a>
+                                    <a href="{!! URL::to('/mobi') !!}"><i class='fa fa-plus fa-fw'></i> Items</a>
                                 </li>
                                 <li>
                                     <a href="{!! URL::to('/pc/create') !!}"><i class='fa fa-plus fa-fw'></i> Agregar Pc</a>
                                 </li>
 
                                 <li>
-                                    <a href="{!! URL::to('/mobi') !!}"><i class='fa fa-list-ol fa-fw'></i> Buscar</a>
+                                    <a href="{!! URL::to('/mobi/buscar') !!}"><i class='fa fa-list-ol fa-fw'></i> Buscar</a>
                                 </li>
                             </ul>
 

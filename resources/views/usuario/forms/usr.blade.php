@@ -17,10 +17,10 @@
 		{!! Form::label('Horas a cubrir:') !!}
 		{!! Form::text('horas_cubrir',null,['class'=>'form-control', 'placeholder'=>'Ingresa las horas que cubrira el usuario']) !!}
 	</div>
-	
+
 	<div class="form-group">
-		{!! Form::label('Tipo:') !!}
-		{!! Form::text('tipo_usuario',null,['class'=>'form-control', 'placeholder'=>'Ingresa el Tipo del usuario']) !!}
+		<legend>Tipo de usuario</legend>
+		{!!Form::select('tipo_usuario', $tipo, ['class'=>'form-control'])!!}
 	</div>
 	
 	<div class="form-group">

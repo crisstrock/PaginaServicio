@@ -10,7 +10,7 @@ class Item extends Model
 {
     protected $table = "items";
 
-    protected $fillable = ['clasificacion','descripcion','modelo','estado','marca','path'];
+    protected $fillable = ['clasificacion','descripcion','modelo','estado','marca','path','numero_inventario','numero_serie'];
 
     public function setPathAttribute($path){
 
@@ -25,9 +25,21 @@ class Item extends Model
 
     public static function MobiAll(){
     	return DB::table('items')
-       // ->where('id',2)
         ->select('items.*')
         ->get();
+    }
+
+    public static function getClasificacion()
+    {
+        $type = DB::select( DB::raw("SHOW COLUMNS FROM items WHERE Field = 'clasificacion'") )[0]->Type;
+        preg_match('/^enum\((.*)\)$/', $type, $matches);
+        $enum = array();
+            foreach( explode(',', $matches[1]) as $value )
+            {
+                $v = trim( $value, "'" );
+                $enum = array_add($enum, $v, $v);
+            }
+        return $enum;
     }
 
     public static function MobiIn($sala){
