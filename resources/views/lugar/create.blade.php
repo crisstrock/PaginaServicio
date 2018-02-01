@@ -13,7 +13,7 @@
 	</div>
 
 	<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-
+	
 	@include('lugar.forms.lugar')
 	
 	{!! link_to('#', $tittle='Agregar', $attributes = ['id'=>'agregar', 'class'=>'btn btn-primary'], $secure=null) !!}

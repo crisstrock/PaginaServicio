@@ -28,8 +28,8 @@ class PcController extends Controller
      */
     public function create()
     {
-        $item = Item::pluck('marca','id');
-        return view('pcs.create',compact('item'));
+        
+        return view('pcs.create',compact('id'));
     }
 
     /**
@@ -52,7 +52,9 @@ class PcController extends Controller
      */
     public function show($id)
     {
-        
+        //return $id;
+        $item_id = Item::find($id);
+        return view('pcs.create',compact('item_id'));
     }
 
     /**

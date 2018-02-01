@@ -31,9 +31,14 @@ class ExisteController extends Controller
      */
     public function create()
     {
-        $lugars = Lugar::pluck('nombre','id');
+        //$lugars = Lugar::pluck('nombre','id');
+        //return $id;
+        //return view('existencias.create',compact('lugars'));
 
-        return view('existencias.create',compact('lugars'));
+    }
+
+    public function buscar(){
+
     }
 
     /**
@@ -44,15 +49,12 @@ class ExisteController extends Controller
      */
     public function store(Request $request)
     {
-        $item = Item::lastIdItem();
-        //$idlugar = $request->input('idlugar');
-        Existencias::create([
-                'lugar_id' => $request['lugar_id'],//$request->input("idlugar"),
-                'item_id' => $request[Item::lastIdItem()],
-            ]);
+        Existencias::create($request->all());
     
         Session::flash('message', 'Existencia creada correctamente');
         return Redirect::to('/mobi');
+
+        
     }
 
     /**
@@ -63,7 +65,9 @@ class ExisteController extends Controller
      */
     public function show($id)
     {
-        //
+        $item_id = Item::find($id);
+        $lugars = Lugar::pluck('nombre','id');
+        return view('existencias.create',compact('item_id','lugars'));
     }
 
     /**

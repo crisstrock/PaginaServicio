@@ -24,8 +24,8 @@ class MobiController extends Controller
     }
 
     public function buscar(){
-        $lugares = Lugar::Lugar();
-        return view('mobiliario.index',compact('lugares'));
+        $mobis = Item::MobiIn($id);
+        return view('mobiliario.show',compact('mobis'));
     }
     /**
      * Show the form for creating a new resource.
@@ -63,9 +63,8 @@ class MobiController extends Controller
      */
     public function show($id)
     {
-
-        $mobis = Item::MobiIn($id);
-        return view('mobiliario.show',compact('mobis'));
+        $lugares = Lugar::Lugar();
+        return view('mobiliario.index',compact('lugares'));
         /*$mobi = DB::table('existencias')->where('lugar_id', '1')->first();
 
 echo $mobi->id;*/

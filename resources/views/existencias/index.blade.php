@@ -17,7 +17,7 @@
 		</td>
 
 		<td>
-			{!!link_to_route('exist.create', $title = 'Agregar Existancia', $parameters = $lugar->nombre, $attributes = ['class'=>'btn btn-primary'])!!}
+			{!!link_to_route('exist.buscar', $title = 'Agregar Existancia', $parameters = $lugar->nombre, $attributes = ['class'=>'btn btn-primary'])!!}
 		</td>
 	</tbody>
 @endforeach

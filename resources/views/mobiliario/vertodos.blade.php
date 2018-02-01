@@ -39,9 +39,9 @@
 
 		<td>
 			
-			{!!link_to_route('mobi.edit', $title = 'Agregar Lugar', $parameters = $item->id, $attributes = ['class'=>'btn btn-primary'])!!}
+			{!!link_to_route('exist.show', $title = 'Agregar Lugar', $parameters = $item->id, $attributes = ['id'=>'agregar_existencia', 'class'=>'btn btn-primary'])!!}
 		@if($item->clasificacion == "Pc")
-			{!!link_to_route('mobi.edit', $title = 'Datos pc', $parameters = $item->id, $attributes = ['class'=>'btn btn-primary'])!!}
+			{!!link_to_route('pc.show', $title = 'Agregar datos pc', $parameters = $item->id, $attributes = ['class'=>'btn btn-primary'])!!}
 		@endif
 			{!!link_to_route('mobi.edit', $title = 'Editar', $parameters = $item->id, $attributes = ['class'=>'btn btn-primary'])!!}
 		</td>
@@ -52,4 +52,10 @@
 
 </div>
 
+@endsection
+
+@section('scripts')
+
+	{!! Html::script('js/script_existencia.js') !!}
+	
 @endsection

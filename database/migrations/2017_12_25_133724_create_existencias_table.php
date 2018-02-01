@@ -13,17 +13,17 @@ class CreateExistenciasTable extends Migration
      */
     public function up()
     {
-        Schema::create('existencias', function (Blueprint $table) {
+        Schema::create('item_lugar', function (Blueprint $table) {
             $table->integer('lugar_id')->unsigned();
             $table->integer('item_id')->unsigned();
             $table->timestamps();
         });
 
-        Schema::table('existencias', function($table) {
+        Schema::table('item_lugar', function($table) {
        $table->foreign('lugar_id')->references('id')->on('lugars');
    });
 
-        Schema::table('existencias', function($table) {
+        Schema::table('item_lugar', function($table) {
        $table->foreign('item_id')->references('id')->on('items');
    });
     }
@@ -35,6 +35,6 @@ class CreateExistenciasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('existencias');
+        Schema::dropIfExists('item_lugar');
     }
 }
