@@ -19,9 +19,8 @@ class ExisteController extends Controller
      */
     public function index()
     {
-        $lugars = Lugar::pluck('nombre','id');
-
-        return view('existencias.index',compact('lugars'));
+        $mobis = Item::MobiIn($id);
+        return view('mobiliario.show',compact('mobis'));
     }
 
     /**
@@ -34,10 +33,6 @@ class ExisteController extends Controller
         //$lugars = Lugar::pluck('nombre','id');
         //return $id;
         //return view('existencias.create',compact('lugars'));
-
-    }
-
-    public function buscar(){
 
     }
 
@@ -78,7 +73,8 @@ class ExisteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mobis = Item::MobiIn($id);
+        return view('mobiliario.show',compact('mobis'));
     }
 
     /**

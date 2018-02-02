@@ -77,7 +77,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="{!! URL::to('/mobi/show') !!}"><i class='fa fa-list-ol fa-fw'></i> Buscar</a>
+                                    <a href=""><i class='fa fa-list-ol fa-fw'></i> Buscar</a>
                                 </li>
                             </ul>
 
@@ -103,12 +103,11 @@
 
 
                         <li>
-                            <a href="#"><i class="fa fa-file-text fa-fw"></i> Existancias<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            
                                 <li>
-                                    <a href="{!! URL::to('/exist/index') !!}"><i class="fa fa-file-text fa-fw"></i> Agregar</a>
+                                    <a href="{!! URL::to('/mobi/show') !!}"><i class="fa fa-file-text fa-fw"></i> Existencias</a>
                                 </li>
-                            </ul>
+                            
                         </li>
 
 

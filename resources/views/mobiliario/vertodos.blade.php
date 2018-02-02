@@ -43,7 +43,6 @@
 		@if($item->clasificacion == "Pc")
 			{!!link_to_route('pc.show', $title = 'Agregar datos pc', $parameters = $item->id, $attributes = ['class'=>'btn btn-primary'])!!}
 		@endif
-			{!!link_to_route('mobi.edit', $title = 'Editar', $parameters = $item->id, $attributes = ['class'=>'btn btn-primary'])!!}
 		</td>
 	</tbody>
 @endforeach

@@ -54,15 +54,16 @@ class MobiController extends Controller
     }
 
     
-
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
+        /*$mobis = Item::MobiIn($id);
+        return view('mobiliario.show',compact('mobis'));*/
         $lugares = Lugar::Lugar();
         return view('mobiliario.index',compact('lugares'));
         /*$mobi = DB::table('existencias')->where('lugar_id', '1')->first();
@@ -79,7 +80,8 @@ echo $mobi->id;*/
      */
     public function edit($id)
     {
-        //
+        $items = Item::find($id);
+        return view('mobiliario.edit', ['items'=>$items]);
     }
 
     /**

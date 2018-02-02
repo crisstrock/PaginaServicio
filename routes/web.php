@@ -24,13 +24,11 @@ Route::resource('mobi', 'MobiController');
 
 
 Route::resource('pc', 'PcController');
-Route::post('pc/create/{id}', 'PcController@create');
 
 Route::resource('revisionrap', 'RevisionController');
 Route::resource('revisiondet', 'RevisionDetController');
 
 Route::resource('exist', 'ExisteController');
-Route::post('exist/create/{{ $item->id }}', 'ExisteController@create');
 
 Route::get('password/email','Auth\ResetPasswordController@getEmail');
 Route::post('password/email','Auth\ResetPasswordController@postEmail');

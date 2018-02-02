@@ -44,7 +44,7 @@ class Item extends Model
 
     public static function MobiIn($sala){
 
-        $query = "select * from items where id in (select item_id from existencias where lugar_id in ( select id from lugars where nombre = '$sala'));";
+        $query = "select * from items where id in (select item_id from item_lugar where lugar_id in ( select id from lugars where nombre = '$sala'));";
         return DB::select($query);
     }
 

@@ -8,7 +8,7 @@ class Pc extends Model
 {
     protected $table = "pcs";
 
-    protected $fillable = ['num_maquina','funciona','sistema_operativo','funciona_monitor','num_serie_cpu','path','lugar_id'];
+    protected $fillable = ['item_id', 'num_maquina','tiene_camara','tiene_bocinas', 'num_serie_cpu','ram','disco_duro','sistema_operativo','sistema_operativo_activado','cable_vga','tiene_monitor','num_serie_monitor','tiene_teclado','tiene_raton','controlador_red','paq_office_version','paq_office_activado','observaciones'];
 
     public function setPathAttribute($path){
 

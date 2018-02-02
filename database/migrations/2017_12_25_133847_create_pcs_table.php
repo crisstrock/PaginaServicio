@@ -15,29 +15,26 @@ class CreatePcsTable extends Migration
     {
         Schema::create('pcs', function (Blueprint $table) {
             $table->integer('item_id')->unsigned();
+            $table->foreign('item_id')->references('id')->on('items');
             $table->string('num_maquina');
-            $table->string('perifericos');
-            $table->string('funciona');
+            $table->integer('tiene_camara');
+            $table->integer('tiene_bocinas');
             $table->string('num_serie_cpu');
             $table->string('ram');
             $table->string('disco_duro');
             $table->string('sistema_operativo');
-            $table->string('sistema_operativo_activado');
+            $table->integer('sistema_operativo_activado');
             $table->string('cable_vga');
-            $table->string('funciona_monitor');
-            $table->string('detalle_monitor');
+            $table->integer('tiene_monitor');
             $table->string('num_serie_monitor');
-            $table->string('detalle_teclado');
-            $table->string('detalle_raton');
+            $table->integer('tiene_teclado');
+            $table->integer('tiene_raton');
             $table->string('controlador_red');
             $table->string('paq_office_version');
-            $table->string('paq_office_activado');
+            $table->integer('paq_office_activado');
+            $table->string('observaciones');
             $table->timestamps();
         });
-
-        Schema::table('pcs', function($table) {
-       $table->foreign('item_id')->references('id')->on('items');
-   });
 
     }
 

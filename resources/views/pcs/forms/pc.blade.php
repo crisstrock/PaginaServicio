@@ -8,11 +8,11 @@
 </div>
 <div class="form-group">
 	{!!Form::label('Tiene_camara','Tiene Camara:')!!}
-	{!!Form::text('tiene_camara',null,['class'=>'form-control', 'placeholder'=>'Ingresa el numero 0 si no y encasi contrarío ingresa 1'])!!}
+	{!!Form::text('tiene_camara',null,['class'=>'form-control', 'placeholder'=>'Ingresa el numero 0 si no y en caso contrarío ingresa 1'])!!}
 </div>
 <div class="form-group">
 	{!!Form::label('Tiene_bocinas','Tiene Bocinas:')!!}
-	{!!Form::text('tiene_bocinas',null,['class'=>'form-control', 'placeholder'=>'Ingresa el numero 0 si no y encasi contrarío ingresa 1'])!!}
+	{!!Form::text('tiene_bocinas',null,['class'=>'form-control', 'placeholder'=>'Ingresa el numero 0 si no y en caso contrarío ingresa 1'])!!}
 </div>
 
 <div class="form-group">
@@ -34,7 +34,7 @@
 </div>
 <div class="form-group">
 	<legend>Sistema Operativo Activado</legend>
-	{!!Form::text('sistema_operativo_activado',null,['class'=>'form-control', 'placeholder'=>'Ingresa el numero 0 si no y encasi contrarío ingresa 1'])!!}
+	{!!Form::text('sistema_operativo_activado',null,['class'=>'form-control', 'placeholder'=>'Ingresa el numero 0 si no y en caso contrarío ingresa 1'])!!}
 </div>
 <div class="form-group">
 	{!!Form::label('CableVGA','Cable VGA:')!!}
@@ -42,7 +42,7 @@
 </div>
 <div class="form-group">
 	{!!Form::label('Tiene_monitor','Tiene Monitor:')!!}
-	{!!Form::text('tiene_monitor',null,['class'=>'form-control', 'placeholder'=>'Ingresa el numero 0 si no y encasi contrarío ingresa 1'])!!}
+	{!!Form::text('tiene_monitor',null,['class'=>'form-control', 'placeholder'=>'Ingresa el numero 0 si no y en caso contrarío ingresa 1'])!!}
 </div>
 <div class="form-group">
 	{!!Form::label('Num_S_Monitor','Numero de Serie del Monitor:')!!}
@@ -66,11 +66,7 @@
 </div>
 <div class="form-group">
 	{!!Form::label('Paq_Offi_Act','El Paquete Office esta Activado:')!!}
-	{!!Form::text('paq_office_activado',null,['class'=>'form-control', 'placeholder'=>'Ingresa el numero 0 si no y encasi contrarío ingresa 1'])!!}
-</div>
-<div class="form-group">
-	{!!Form::label('CRed','Controlador de Red:')!!}
-	{!!Form::text('controlador_red',null,['class'=>'form-control', 'placeholder'=>'Ingresa el Controlador de Red'])!!}
+	{!!Form::text('paq_office_activado',null,['class'=>'form-control', 'placeholder'=>'Ingresa el numero 0 si no y en caso contrarío ingresa 1'])!!}
 </div>
 <div class="form-group">
 	{!!Form::label('Observaciones','Observaciones:')!!}
