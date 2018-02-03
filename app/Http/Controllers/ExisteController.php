@@ -4,6 +4,7 @@ namespace PaginaServicio\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PaginaServicio\Item;
+use PaginaServicio\Pc;
 use PaginaServicio\Lugar;
 use PaginaServicio\Existencias;
 use DB;
@@ -19,8 +20,8 @@ class ExisteController extends Controller
      */
     public function index()
     {
-        $mobis = Item::MobiIn($id);
-        return view('mobiliario.show',compact('mobis'));
+        $lugares = Lugar::Lugar();
+        return view('existencias.index',compact('lugares'));
     }
 
     /**
@@ -60,9 +61,10 @@ class ExisteController extends Controller
      */
     public function show($id)
     {
-        $item_id = Item::find($id);
-        $lugars = Lugar::pluck('nombre','id');
-        return view('existencias.create',compact('item_id','lugars'));
+        $mobis = Item::MobiIn($id);
+        $pcs = Pc::getPcs();
+        //return $pcs;
+        return view('mobiliario.show_pc',compact('mobis','pcs'));
     }
 
     /**
@@ -73,9 +75,12 @@ class ExisteController extends Controller
      */
     public function edit($id)
     {
-        $mobis = Item::MobiIn($id);
-        return view('mobiliario.show',compact('mobis'));
+        $item_id = Item::find($id);
+        $lugars = Lugar::pluck('nombre','id');
+        return view('existencias.create',compact('item_id','lugars'));
+        
     }
+
 
     /**
      * Update the specified resource in storage.

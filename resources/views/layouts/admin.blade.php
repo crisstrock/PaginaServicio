@@ -105,7 +105,7 @@
                         <li>
                             
                                 <li>
-                                    <a href="{!! URL::to('/mobi/show') !!}"><i class="fa fa-file-text fa-fw"></i> Existencias</a>
+                                    <a href="{!! URL::to('/exist') !!}"><i class="fa fa-file-text fa-fw"></i> Existencias</a>
                                 </li>
                             
                         </li>

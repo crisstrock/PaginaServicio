@@ -19,13 +19,8 @@ class MobiController extends Controller
     public function index()
     {
         $items = Item::MobiAll();
-        return view('mobiliario.vertodos',compact('items'));       
+        return view('mobiliario.index',compact('items'));       
         
-    }
-
-    public function buscar(){
-        $mobis = Item::MobiIn($id);
-        return view('mobiliario.show',compact('mobis'));
     }
     /**
      * Show the form for creating a new resource.
@@ -60,16 +55,10 @@ class MobiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        /*$mobis = Item::MobiIn($id);
-        return view('mobiliario.show',compact('mobis'));*/
-        $lugares = Lugar::Lugar();
-        return view('mobiliario.index',compact('lugares'));
-        /*$mobi = DB::table('existencias')->where('lugar_id', '1')->first();
-
-echo $mobi->id;*/
-        
+        $mobis = Item::MobiIn($id);
+        return view('mobiliario.show',compact('mobis'));
     }
 
     /**
@@ -93,7 +82,12 @@ echo $mobi->id;*/
      */
     public function update(Request $request, $id)
     {
-        //
+        $item = Item::find($id);
+        $item->fill($request->all());
+        $items->save();
+
+        Session::flash('message','Item editada correctamente');
+        return Redirect::to('/item');
     }
 
     /**

@@ -1,6 +1,6 @@
 <div class="form-group">
 	{!!Form::label('Id_Itema','Id del Item:')!!}
-	{!!Form::text('item_id',$pc->item_id,['class'=>'form-control'])!!}
+	{!!Form::text('item_id',$pcs->item_id,['class'=>'form-control'])!!}
 </div>
 <div class="form-group">
 	{!!Form::label('Num_maquina','Numero de Maquina:')!!}

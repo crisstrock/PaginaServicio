@@ -29,7 +29,6 @@ class PcController extends Controller
     public function create()
     {
         
-        return view('pcs.create',compact('id'));
     }
 
     /**
@@ -41,7 +40,7 @@ class PcController extends Controller
     public function store(Request $request)
     {
         Pc::create($request->all());
-        return Redirect::to('/admin');
+        return Redirect::to('/mobi');
     }
 
     /**
@@ -52,7 +51,6 @@ class PcController extends Controller
      */
     public function show($id)
     {
-        //return $id;
         $item_id = Item::find($id);
         return view('pcs.create',compact('item_id'));
     }
@@ -65,9 +63,20 @@ class PcController extends Controller
      */
     public function edit($id)
     {
-        $lugar = Lugar::pluck('nombre','id');
-        $pc = Pc::find($id);
-        return view('pcs.edit', ['pcs'=>$pc, 'lugar'=>$lugar]);
+        $pcs = Pc::find($id);
+        /*$item = Item::find($id);
+        $pc = Pc::all();
+        foreach($item as $items){
+            foreach($pc as $pcs){
+            //if($items->id == $pcs->item_id){
+                return $pc;
+            //}
+
+        }
+        }*/
+        //$pc = Pc::find($id);
+        
+        return view('pcs.edit',compact('pcs'));
     }
 
     /**

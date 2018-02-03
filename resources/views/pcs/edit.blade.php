@@ -1,17 +1,24 @@
+
 @extends('layouts.admin')
 
 @section('content')
 
 @include('alerts.request')
-		
-		{!!Form::model($computadoras,['route'=> ['compu.update',$computadoras->id],'method'=>'PUT','files' => true])!!}
 
-			@include('compus.forms.compu')
+
+		
+		
+		{!!Form::model($pcs,['route'=> ['pc.update',$pcs->item_id],'method'=>'PUT'])!!}
+
+			@include('pcs.forms.pc_edit')
 
 			{!!Form::submit('Actualizar',['class'=>'btn btn-primary'])!!}
 		{!!Form::close()!!}
 
-		{!!Form::open(['route'=> ['compu.destroy',$computadoras->id],'method'=>'DELETE'])!!}
+		{!!Form::open(['route'=> ['pc.destroy',$pcs->item_id],'method'=>'DELETE'])!!}
 			{!!Form::submit('Eliminar',['class'=>'btn btn-danger'])!!}
 		{!!Form::close()!!}
+		
+
+
 	@endsection

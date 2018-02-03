@@ -29,6 +29,7 @@ Route::resource('revisionrap', 'RevisionController');
 Route::resource('revisiondet', 'RevisionDetController');
 
 Route::resource('exist', 'ExisteController');
+Route::resource('exist/{id}/showPc', 'ExisteController@showPc');
 
 Route::get('password/email','Auth\ResetPasswordController@getEmail');
 Route::post('password/email','Auth\ResetPasswordController@postEmail');
